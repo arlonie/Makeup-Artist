@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Glam Studio</title>
+    <meta name="description" content="Read reviews and testimonials from our satisfied clients.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .review-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-base);
+        }
+
+        .review-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .reviewer-info h4 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .reviewer-info p {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            opacity: 0.7;
+            margin: 0;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .review-body {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        .review-meta {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            opacity: 0.6;
+        }
+
+        .review-category {
+            background: var(--accent);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-2xl);
+            text-align: center;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .rating-label {
+            width: 100px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #3a3a3a;
+        }
+
+        .bar-container {
+            flex: 1;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 1s ease;
+        }
+
+        .rating-count {
+            font-size: 0.85rem;
+            color: #3a3a3a;
+            min-width: 40px;
+            text-align: right;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">✨ GLAM STUDIO</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="reviews.html" class="nav-link active">Reviews</a></li>
+                    <li><a href="contact.html" class="nav-link cta-button">Book Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--text-light); padding: var(--spacing-2xl) 0; text-align: center;">
+        <div class="container">
+            <h1>Client Reviews</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Trusted by Hundreds of Happy Clients</p>
+        </div>
+    </section>
+
+    <!-- Reviews Main -->
+    <section class="services-preview">
+        <div class="container">
+            <!-- Statistics -->
+            <div class="section-header">
+                <h2>Why Choose Glam Studio?</h2>
+                <p class="section-subtitle">Proven Excellence & Client Satisfaction</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">4.9★</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Satisfaction Rate</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+            </div>
+
+            <!-- Rating Distribution -->
+            <div style="background: #FAFAFA; padding: var(--spacing-lg); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2xl);">
+                <h3 style="color: var(--primary); margin-bottom: var(--spacing-lg);">Rating Breakdown</h3>
+                
+                <div class="rating-bar">
+                    <div class="rating-label">5 Stars</div>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 92%;"></div>
+                    </div>
+                    <div class="rating-count">460 reviews</div>
+                </div>
+
+                <div class="rating-bar">
+                    <div class="rating-label">4 Stars</div>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 6%;"></div>
+                    </div>
+                    <div class="rating-count">30 reviews</div>
+                </div>
+
+                <div class="rating-bar">
+                    <div class="rating-label">3 Stars</div>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 1%;"></div>
+                    </div>
+                    <div class="rating-count">5 reviews</div>
+                </div>
+
+                <div class="rating-bar">
+                    <div class="rating-label">2 Stars</div>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%;"></div>
+                    </div>
+                    <div class="rating-count">0 reviews</div>
+                </div>
+
+                <div class="rating-bar">
+                    <div class="rating-label">1 Star</div>
+                    <div class="bar-container">
+                        <div class="bar-fill" style="width: 0%;"></div>
+                    </div>
+                    <div class="rating-count">0 reviews</div>
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div style="margin-bottom: var(--spacing-2xl);">
+                <h2 style="color: var(--primary); text-align: center; margin-bottom: var(--spacing-2xl);">Client Testimonials</h2>
+                
+                <div class="reviews-grid">
+                    <!-- Bridal Reviews -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Sarah M.</h4>
+                                <p>Wedding - June 2024</p>
+                            </div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-text">"She absolutely transformed my look for my wedding day! I felt so confident and beautiful. The makeup lasted perfectly through the entire day and all the photos. Highly recommend!"</p>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-category">👰 Bridal</span>
+                            <span>Verified Client</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Jessica L.</h4>
+                                <p>Bridal - May 2024</p>
+                            </div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-text">"Professional, creative, and so attentive to detail. She listened to exactly what I wanted and exceeded my expectations. My bridal makeup was flawless!"</p>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-category">👰 Bridal</span>
+                            <span>Verified Client</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Amanda K.</h4>
+                                <p>Bridal Party - April 2024</p>
+                            </div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-text">"Best makeup artist I've ever worked with! She made all of us bridesmaids look stunning and coordinated beautifully with the bride. Excellent communication."</p>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-category">👰 Bridal Party</span>
+                            <span>Verified Client</span>
+                        </div>
+                    </div>
+
+                    <!-- Editorial Reviews -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Michael R.</h4>
+                                <p>Editorial Shoot - August 2024</p>
+                            </div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-text">"Fantastic makeup artist for our magazine photoshoot. Creative, professional, and great at on-set touch-ups. The makeup was perfect in every shot!"</p>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-category">🎬 Editorial</span>
+                            <span>Verified Client</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Emma S.</h4>
+                                <p>Fashion Model - July 2024</p>
+                            </div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-text">"She understands photography and how makeup translates on camera. My makeup was stunning, long-lasting, and photograph-perfect. Will definitely book again!"</p>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-category">🎬 Fashion</span>
+                            <span>Verified Client</span>
+                        </div>
+                    </div>
+
+                    <!-- Event Reviews -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Rachel T.</h4>
+                                <p>Gala Event - September 2024</p>
+                            </div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-text">"I felt like a movie star in her makeup! The colors were perfect for my skin tone, and the makeup lasted the entire evening. Absolutely worth every penny!"</p>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-category">✨ Events</span>
+                            <span>Verified Client</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Nicole M.</h4>
+                                <p>Corporate Event - October 2024</p>
+                            </div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-text">"Professional and polished! The makeup was appropriate for a corporate event but still made me feel glamorous. Highly professional service!"</p>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-category">✨ Corporate</span>
+                            <span>Verified Client</span>
+                        </div>
+                    </div>
+
+                    <!-- Lessons Reviews -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Olivia D.</h4>
+                                <p>Makeup Lessons - November 2024</p>
+                            </div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-text">"Great makeup instructor! She explained techniques clearly, was patient with my questions, and gave me confidence to do my own makeup. Worth every minute!"</p>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-category">📚 Lessons</span>
+                            <span>Verified Client</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Sophia B.</h4>
+                                <p>Beauty Touch-Up - December 2024</p>
+                            </div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-text">"Quick, efficient, and amazing results! She enhanced my makeup perfectly without dramatic changes. Perfect for that finishing touch before a big event!"</p>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-category">💄 Beauty</span>
+                            <span>Verified Client</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <h4>Victoria P.</h4>
+                                <p>Group Workshop - January 2024</p>
+                            </div>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-body">
+                            <p class="review-text">"Had a wonderful time at the group workshop! She made everyone feel comfortable and taught valuable techniques. Fun and educational - highly recommend!"</p>
+                        </div>
+                        <div class="review-meta">
+                            <span class="review-category">📚 Workshop</span>
+                            <span>Verified Client</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Join Our Satisfied Clients</h2>
+            <p>Experience Professional Makeup Artistry</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary btn-lg">Book Your Appointment</a>
+                <a href="services.html" class="btn btn-outline btn-lg">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Glam Studio</h4>
+                    <p>Professional makeup artistry for the modern woman</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Social Media</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">TikTok</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: hello@glamstudio.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Glam Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

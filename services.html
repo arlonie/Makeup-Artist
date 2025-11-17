@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Glam Studio</title>
+    <meta name="description" content="Explore our professional makeup services with pricing and booking options.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .pricing-card {
+            background: #FFFFFF;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            transition: all var(--transition-base);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--secondary);
+            box-shadow: var(--shadow-lg);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: #2C2C2C;
+            padding: var(--spacing-xs) var(--spacing-lg);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-name {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .price-note {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            opacity: 0.6;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .service-features {
+            text-align: left;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .service-features li {
+            list-style: none;
+            padding: var(--spacing-xs) 0;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .service-features li:before {
+            content: "✓ ";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: var(--spacing-sm);
+        }
+
+        .service-description {
+            background: #FAFAFA;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-lg);
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #3a3a3a;
+        }
+
+        .package-section {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .package-section h3 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .add-ons {
+            background: #FAFAFA;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .add-ons h3 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .add-ons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .add-on-item {
+            background: #FFFFFF;
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+
+        .add-on-item h4 {
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .add-on-item p {
+            font-size: 0.85rem;
+            color: #4a4a4a;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .add-on-price {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">✨ GLAM STUDIO</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                    <li><a href="contact.html" class="nav-link cta-button">Book Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--text-light); padding: var(--spacing-2xl) 0; text-align: center;">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Professional Makeup for Every Occasion</p>
+        </div>
+    </section>
+
+    <!-- Services Main -->
+    <section class="services-preview">
+        <div class="container">
+            <!-- Bridal Services -->
+            <div class="package-section" id="bridal">
+                <h2 style="color: var(--primary);">👰 Bridal Services</h2>
+                <p style="font-size: 1.1rem; margin-bottom: var(--spacing-lg);">Make your wedding day unforgettable with makeup that lasts and photographs beautifully.</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card featured">
+                        <div class="badge">MOST POPULAR</div>
+                        <h3 class="service-name">Bridal Makeup</h3>
+                        <div class="price">$150</div>
+                        <p class="price-note">On-site or studio session</p>
+                        <div class="service-description">
+                            Complete bridal makeup application with trial session included. Professional makeup tailored to your wedding aesthetic, venue lighting, and photography.
+                        </div>
+                        <ul class="service-features">
+                            <li>Makeup trial session</li>
+                            <li>Professional makeup application</li>
+                            <li>Touch-up kit included</li>
+                            <li>Longevity guarantee (8+ hours)</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3 class="service-name">Bridal Party (Each)</h3>
+                        <div class="price">$100</div>
+                        <p class="price-note">Per person</p>
+                        <div class="service-description">
+                            Professional makeup for bridesmaids and wedding party members. Coordinated look with the bride for cohesive bridal party photos.
+                        </div>
+                        <ul class="service-features">
+                            <li>Professional application</li>
+                            <li>Coordinated bridal look</li>
+                            <li>Touch-up kit included</li>
+                            <li>Quick turnaround</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3 class="service-name">Wedding Trial</h3>
+                        <div class="price">$75</div>
+                        <p class="price-note">Standalone appointment</p>
+                        <div class="service-description">
+                            Test your bridal look before the big day. Perfect for exploring options and ensuring the makeup photographs beautifully.
+                        </div>
+                        <ul class="service-features">
+                            <li>Full makeup trial</li>
+                            <li>Photo consultation</li>
+                            <li>Custom adjustments</li>
+                            <li>Notes for wedding day</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editorial Services -->
+            <div class="package-section" id="editorial">
+                <h2 style="color: var(--primary);">🎬 Editorial & Creative Makeup</h2>
+                <p style="font-size: 1.1rem; margin-bottom: var(--spacing-lg);">Bring your creative vision to life with bold, artistic makeup for photoshoots and campaigns.</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3 class="service-name">Editorial Session</h3>
+                        <div class="price">$200</div>
+                        <p class="price-note">Per look (2+ looks available)</p>
+                        <div class="service-description">
+                            Creative makeup application for magazine shoots, campaigns, and conceptual photography. Includes makeup touch-ups during shoot.
+                        </div>
+                        <ul class="service-features">
+                            <li>Conceptual makeup creation</li>
+                            <li>Professional application</li>
+                            <li>On-set touch-ups</li>
+                            <li>Creative consultation</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="badge">FULL DAY RATE</div>
+                        <h3 class="service-name">Production Day</h3>
+                        <div class="price">$600</div>
+                        <p class="price-note">6-8 hour shoot</p>
+                        <div class="service-description">
+                            Full-day makeup artistry for professional productions. Includes multiple looks, touch-ups, and creative problem-solving throughout the day.
+                        </div>
+                        <ul class="service-features">
+                            <li>Unlimited looks</li>
+                            <li>Continuous touch-ups</li>
+                            <li>Creative input</li>
+                            <li>Flexible scheduling</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3 class="service-name">Special Effects</h3>
+                        <div class="price">$250</div>
+                        <p class="price-note">Per look</p>
+                        <div class="service-description">
+                            Specialized effects makeup including fantasy, theatrical, or conceptual designs. Perfect for creative projects and artistic vision.
+                        </div>
+                        <ul class="service-features">
+                            <li>Custom design</li>
+                            <li>Premium materials</li>
+                            <li>Detailed application</li>
+                            <li>On-set support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beauty Makeup Services -->
+            <div class="package-section" id="beauty">
+                <h2 style="color: var(--primary);">✨ Beauty & Event Makeup</h2>
+                <p style="font-size: 1.1rem; margin-bottom: var(--spacing-lg);">Look your absolute best for any occasion with our professional beauty makeup services.</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3 class="service-name">Event Makeup</h3>
+                        <div class="price">$85</div>
+                        <p class="price-note">Gala, party, date night</p>
+                        <div class="service-description">
+                            Polished, glamorous makeup for special events and occasions. Includes professional application and touch-up products.
+                        </div>
+                        <ul class="service-features">
+                            <li>Custom color matching</li>
+                            <li>Professional application</li>
+                            <li>Touch-up kit included</li>
+                            <li>All-day longevity</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="badge">BEST VALUE</div>
+                        <h3 class="service-name">Beauty Touch-Up</h3>
+                        <div class="price">$45</div>
+                        <p class="price-note">Quick refresh</p>
+                        <div class="service-description">
+                            Quick, professional touch-ups for those who already wear makeup. Perfect for adjusting makeup for photos, events, or refreshing your daily look.
+                        </div>
+                        <ul class="service-features">
+                            <li>30-minute session</li>
+                            <li>Professional enhancement</li>
+                            <li>Technique tips</li>
+                            <li>Expert consultation</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3 class="service-name">Natural Everyday</h3>
+                        <div class="price">$60</div>
+                        <p class="price-note">Minimal yet stunning</p>
+                        <div class="service-description">
+                            Subtle, natural makeup that enhances your features without dramatic changes. Perfect for daily wear and professional settings.
+                        </div>
+                        <ul class="service-features">
+                            <li>Skin-focused approach</li>
+                            <li>Natural enhancement</li>
+                            <li>Technique instruction</li>
+                            <li>Product recommendations</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Makeup Lessons -->
+            <div class="package-section" id="lessons">
+                <h2 style="color: var(--primary);">📚 Makeup Lessons & Workshops</h2>
+                <p style="font-size: 1.1rem; margin-bottom: var(--spacing-lg);">Learn professional makeup techniques from an expert artist. Master skills to do your own makeup beautifully.</p>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3 class="service-name">One-on-One Lesson</h3>
+                        <div class="price">$100</div>
+                        <p class="price-note">60 minutes</p>
+                        <div class="service-description">
+                            Personalized makeup instruction tailored to your skin type, face shape, and preferences. Learn techniques specific to your needs.
+                        </div>
+                        <ul class="service-features">
+                            <li>Personalized instruction</li>
+                            <li>Hands-on practice</li>
+                            <li>Product guidance</li>
+                            <li>Take-home notes</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="badge">SAVE $30</div>
+                        <h3 class="service-name">Lesson Package</h3>
+                        <div class="price">$270</div>
+                        <p class="price-note">3 sessions (save $30)</p>
+                        <div class="service-description">
+                            Three one-hour sessions covering different makeup techniques. Build your skills progressively with expert guidance and practice.
+                        </div>
+                        <ul class="service-features">
+                            <li>3 personalized sessions</li>
+                            <li>Progressive learning</li>
+                            <li>Product recommendations</li>
+                            <li>Lifetime email support</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3 class="service-name">Group Workshop</h3>
+                        <div class="price">$50</div>
+                        <p class="price-note">Per person (min. 4)</p>
+                        <div class="service-description">
+                            Fun, interactive workshop for groups. Learn makeup basics and tips in a supportive environment with friends or family.
+                        </div>
+                        <ul class="service-features">
+                            <li>Group instruction</li>
+                            <li>Interactive learning</li>
+                            <li>Team discounts available</li>
+                            <li>Certificates included</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add-Ons -->
+            <div class="add-ons">
+                <h3>✨ Add-On Services</h3>
+                <p style="margin-bottom: var(--spacing-lg);">Enhance your service with these optional add-ons:</p>
+                <div class="add-ons-grid">
+                    <div class="add-on-item">
+                        <h4>Lash Application</h4>
+                        <p>Premium lashes for dramatic impact</p>
+                        <p class="add-on-price">+$25</p>
+                    </div>
+                    <div class="add-on-item">
+                        <h4>Eyebrow Design</h4>
+                        <p>Professional eyebrow shaping</p>
+                        <p class="add-on-price">+$30</p>
+                    </div>
+                    <div class="add-on-item">
+                        <h4>Airbrush Application</h4>
+                        <p>Flawless, long-lasting coverage</p>
+                        <p class="add-on-price">+$40</p>
+                    </div>
+                    <div class="add-on-item">
+                        <h4>Lip Enhancement</h4>
+                        <p>Custom lip art & design</p>
+                        <p class="add-on-price">+$20</p>
+                    </div>
+                    <div class="add-on-item">
+                        <h4>Makeup Consultation</h4>
+                        <p>Before selecting your service</p>
+                        <p class="add-on-price">+$25</p>
+                    </div>
+                    <div class="add-on-item">
+                        <h4>Travel Service</h4>
+                        <p>Service at your location</p>
+                        <p class="add-on-price">+$50</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Book?</h2>
+            <p>Select your service and schedule your appointment today</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary btn-lg">Schedule Appointment</a>
+                <a href="index.html" class="btn btn-outline btn-lg">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Glam Studio</h4>
+                    <p>Professional makeup artistry for the modern woman</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Social Media</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">TikTok</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: hello@glamstudio.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Glam Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

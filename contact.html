@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Glam Studio</title>
+    <meta name="description" content="Book your appointment or get in touch with Glam Studio makeup artist.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .contact-form {
+            background: #FFFFFF;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: var(--spacing-sm);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all var(--transition-base);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 71, 137, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+
+        .submit-button {
+            width: 100%;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .info-block {
+            background: #FFFFFF;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .info-block h3 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .info-block p {
+            font-size: 1rem;
+            margin: 0;
+            color: #3a3a3a;
+        }
+
+        .info-block a {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .info-block a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all var(--transition-base);
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .availability-grid {
+            display: grid;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .availability-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md);
+            background: #FAFAFA;
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--secondary);
+            color: #3a3a3a;
+        }
+
+        .availability-item strong {
+            color: var(--primary);
+        }
+
+        .faq-section {
+            background: #FAFAFA;
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .faq-item {
+            margin-bottom: var(--spacing-lg);
+            background: #FFFFFF;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--primary);
+        }
+
+        .faq-item h4 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-item p {
+            margin: 0;
+            line-height: 1.6;
+            color: #3a3a3a;
+        }
+
+        .success-message {
+            display: none;
+            background: var(--success);
+            color: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">✨ GLAM STUDIO</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                    <li><a href="contact.html" class="nav-link active cta-button">Book Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: var(--text-light); padding: var(--spacing-2xl) 0; text-align: center;">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Schedule Your Appointment or Ask Questions</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Form -->
+                <div>
+                    <div class="section-header">
+                        <h2>Book an Appointment</h2>
+                        <p class="section-subtitle">We'll confirm your booking within 24 hours</p>
+                    </div>
+
+                    <div class="success-message" id="successMessage">
+                        ✓ Thank you! Your booking request has been sent. We'll contact you soon!
+                    </div>
+
+                    <form class="contact-form" id="bookingForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="bridal">Bridal Makeup - $150</option>
+                                    <option value="bridal-party">Bridal Party - $100</option>
+                                    <option value="editorial">Editorial - $200+</option>
+                                    <option value="event">Event Makeup - $85</option>
+                                    <option value="touchup">Beauty Touch-Up - $45</option>
+                                    <option value="lesson">Makeup Lesson - $100</option>
+                                    <option value="workshop">Group Workshop - $50</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Preferred Date *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Preferred Time *</label>
+                                <input type="time" id="time" name="time" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="occasion">Occasion/Event Type</label>
+                            <input type="text" id="occasion" name="occasion" placeholder="e.g., Wedding, Corporate Event, Photoshoot">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message / Special Requests</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your vision, preferences, or any questions..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit-button btn-lg">Request Booking</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <div class="section-header">
+                        <h2>Contact Information</h2>
+                        <p class="section-subtitle">Reach out anytime</p>
+                    </div>
+
+                    <div class="contact-info">
+                        <!-- Phone -->
+                        <div class="info-block">
+                            <h3>📞 Phone</h3>
+                            <p><a href="tel:+1555123456">(555) 123-4567</a></p>
+                            <p style="font-size: 0.85rem; opacity: 0.8; margin-top: var(--spacing-sm);">Available Mon-Sat, 10am-6pm</p>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="info-block">
+                            <h3>✉️ Email</h3>
+                            <p><a href="mailto:hello@glamstudio.com">hello@glamstudio.com</a></p>
+                            <p style="font-size: 0.85rem; opacity: 0.8; margin-top: var(--spacing-sm);">Respond within 24 hours</p>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="info-block">
+                            <h3>📍 Location</h3>
+                            <p>Glam Studio<br>123 Beauty Lane<br>New York, NY 10001</p>
+                            <a href="#" style="margin-top: var(--spacing-sm); display: inline-block;">Get Directions →</a>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="info-block">
+                            <h3>🌐 Follow Us</h3>
+                            <p style="margin-bottom: var(--spacing-md);">Connect with us on social media for behind-the-scenes content and makeup inspiration</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link" title="Instagram">f</a>
+                                <a href="#" class="social-link" title="Facebook">f</a>
+                                <a href="#" class="social-link" title="TikTok">♪</a>
+                                <a href="#" class="social-link" title="Pinterest">P</a>
+                            </div>
+                        </div>
+
+                        <!-- Availability -->
+                        <div class="info-block">
+                            <h3>⏰ Availability</h3>
+                            <div class="availability-grid">
+                                <div class="availability-item">
+                                    <span>Monday - Friday</span>
+                                    <strong>10am - 6pm</strong>
+                                </div>
+                                <div class="availability-item">
+                                    <span>Saturday</span>
+                                    <strong>10am - 4pm</strong>
+                                </div>
+                                <div class="availability-item">
+                                    <span>Sunday</span>
+                                    <strong>Closed</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 style="color: var(--primary); text-align: center; margin-bottom: var(--spacing-2xl);">Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <h4>📅 How far in advance should I book?</h4>
+                    <p>For bridal and large events, we recommend booking 6-8 weeks in advance. For other services, 1-2 weeks is typically available. We accept last-minute bookings subject to availability.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>💰 What's your cancellation policy?</h4>
+                    <p>Free cancellations up to 7 days before your appointment. Cancellations within 7 days may incur a 50% fee. No-shows will be charged in full.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>🎨 Do you offer makeup trials?</h4>
+                    <p>Yes! Makeup trials are highly recommended, especially for bridal services. Trials cost $75 and can be applied to your final service if you book.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>💄 What's your payment method?</h4>
+                    <p>We accept cash, card, Venmo, PayPal, and bank transfers. A 50% deposit is required to secure your booking, with the balance due on the day of service.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>🚗 Do you travel for services?</h4>
+                    <p>Yes! We offer on-site services for an additional $50 travel fee. This includes hotel rooms, homes, venues, and event spaces within 15 miles of our location.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>❓ Do you accommodate sensitive skin or allergies?</h4>
+                    <p>Absolutely! Please mention any skin sensitivities, allergies, or concerns when booking. We use hypoallergenic products and can customize our services accordingly.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>📸 Can I book you for a photoshoot?</h4>
+                    <p>Yes! We specialize in makeup for photography. Please provide details about your concept, aesthetic, and any specific looks you're envisioning.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>👗 What should I wear to my appointment?</h4>
+                    <p>Wear comfortable, loose-fitting clothing that won't interfere with makeup application. A button-up or open-back top is ideal to avoid disturbing your makeup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Glow?</h2>
+            <p>Let's create your perfect makeup look</p>
+            <div class="cta-buttons">
+                <a href="#bookingForm" class="btn btn-primary btn-lg">Schedule Now</a>
+                <a href="services.html" class="btn btn-outline btn-lg">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Glam Studio</h4>
+                    <p>Professional makeup artistry for the modern woman</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Social Media</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">TikTok</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: hello@glamstudio.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Glam Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Form submission
+        document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            // Scroll to message
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
