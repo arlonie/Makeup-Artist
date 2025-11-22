@@ -1145,7 +1145,7 @@ section {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
-}
+
 
 @media (max-width: 480px) {
     html {
@@ -1399,8 +1399,6 @@ section {
         border-bottom: none;
     }
 }
-    }
-}
 
 /* ========== ACCESSIBILITY ========== */
 @media (prefers-reduced-motion: reduce) {
@@ -1435,8 +1433,8 @@ section {
     }
 
     .nav-menu {
-        background: #2a2a2a;
-        border-top: 1px solid #404040;
+        background: #2C2C2C;
+        border-top: 1px solid #2C2C2C;
     }
 
     .nav-menu li {
