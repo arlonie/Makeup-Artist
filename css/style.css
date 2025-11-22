@@ -161,7 +161,26 @@ section {
     transition: color var(--transition-base);
 }
 
-/* Hamburger Menu */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.cta-button::after {
+    display: none;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -245,7 +264,6 @@ section {
 
     .nav-link:hover,
     .nav-link.active {
-        background-color: #F5F5F5;
         color: var(--primary);
         padding-left: 22px;
     }
@@ -268,22 +286,6 @@ section {
     .cta-button:hover {
         box-shadow: 0 4px 12px rgba(139, 71, 137, 0.35);
     }
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--secondary);
-    transition: width var(--transition-base);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
 }
 
 .cta-button {
@@ -1241,7 +1243,6 @@ section {
 
     .nav-link:hover,
     .nav-link.active {
-        background-color: #353535;
         color: #d4af37;
     }
 
