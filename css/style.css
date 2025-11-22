@@ -149,6 +149,8 @@ section {
     list-style: none;
     gap: var(--spacing-lg);
     align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-link {
@@ -681,15 +683,19 @@ section {
 
     .logo {
         font-size: 0.9rem;
+        white-space: nowrap;
     }
 
     .nav-menu {
         gap: 0;
         font-size: 0.65rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-link {
         padding: var(--spacing-xs) var(--spacing-xs);
+        white-space: nowrap;
     }
 
     .btn {
@@ -722,17 +728,23 @@ section {
     }
 
     .nav-wrapper {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: var(--spacing-md);
+        align-items: center;
+        justify-content: space-between;
     }
 
     .logo {
         font-size: 1.2rem;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .nav-menu {
         gap: var(--spacing-md);
         font-size: 0.85rem;
+        display: flex;
+        align-items: center;
     }
 
     .cta-button {
@@ -852,26 +864,46 @@ section {
     }
 
     .nav-wrapper {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        justify-content: space-between;
         gap: var(--spacing-sm);
+        align-items: center;
     }
 
     .logo {
         font-size: 1rem;
-        order: 1;
-        flex-basis: 100%;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     .nav-menu {
-        width: 100%;
+        display: flex;
         gap: var(--spacing-xs);
-        flex-wrap: wrap;
-        order: 2;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex: 1;
         font-size: 0.75rem;
+        scroll-behavior: smooth;
+        padding-bottom: 4px;
+    }
+
+    .nav-menu::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    .nav-menu::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .nav-menu::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 4px;
     }
 
     .nav-link {
         padding: var(--spacing-xs) var(--spacing-sm);
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     /* Hero */
