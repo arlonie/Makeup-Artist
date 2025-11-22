@@ -352,6 +352,22 @@ section {
     justify-content: center;
 }
 
+.owner-photo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+}
+
+.owner-photo:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
 .image-placeholder {
     width: 100%;
     max-width: 400px;
