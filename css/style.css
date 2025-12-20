@@ -609,6 +609,364 @@ section {
     text-align: center;
 }
 
+/* ========== INSTAGRAM-STYLE CAROUSEL ========== */
+.ig-carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto var(--spacing-2xl);
+    background: #FFFFFF;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.ig-carousel-inner {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.ig-carousel-item {
+    flex: 0 0 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ig-carousel-item.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Portfolio Carousel Style */
+.portfolio-preview .ig-carousel-item {
+    flex-direction: column;
+    min-height: 380px;
+}
+
+.ig-image-wrapper {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--accent), #E8D7C3);
+}
+
+.ig-image-wrapper .image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: none;
+    aspect-ratio: auto;
+}
+
+.ig-carousel-content {
+    padding: var(--spacing-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.ig-carousel-content h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.3rem;
+}
+
+.ig-carousel-content p {
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Testimonials Carousel Style */
+.testimonials-preview .ig-carousel {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.ig-testimonial-wrapper {
+    width: 100%;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.ig-testimonial-content {
+    max-width: 500px;
+}
+
+.ig-testimonial-content .stars {
+    display: block;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.2rem;
+}
+
+.ig-testimonial-content .testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    font-style: italic;
+}
+
+.ig-testimonial-content .testimonial-author {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.ig-testimonial-content .testimonial-role {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Navigation Buttons */
+.ig-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(139, 71, 137, 0.85);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+.ig-nav-btn:hover {
+    background: rgba(139, 71, 137, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.ig-nav-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.ig-prev {
+    left: var(--spacing-md);
+}
+
+.ig-next {
+    right: var(--spacing-md);
+}
+
+/* Dots Navigation */
+.ig-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.ig-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    outline: none;
+}
+
+.ig-dot.active {
+    background: var(--primary);
+    width: 28px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(139, 71, 137, 0.3);
+}
+
+.ig-dot:hover {
+    border-color: var(--secondary);
+    background: rgba(139, 71, 137, 0.1);
+}
+
+.testimonials-preview .ig-dot {
+    border-color: var(--text-light);
+}
+
+.testimonials-preview .ig-dot.active {
+    background: var(--text-light);
+}
+
+/* Services Carousel Style */
+.services-preview .ig-carousel-item {
+    flex-direction: column;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    min-height: 320px;
+}
+
+.ig-service-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.ig-service-wrapper .service-icon {
+    font-size: 3rem;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.ig-service-wrapper h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.ig-service-wrapper p {
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    opacity: 0.8;
+    max-width: 350px;
+    margin-bottom: var(--spacing-md);
+}
+
+.ig-service-wrapper .service-link {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.ig-service-wrapper .service-link:hover {
+    color: var(--primary);
+    transform: translateX(4px);
+}
+
+/* Reviews Carousel Wrapper */
+.ig-review-wrapper {
+    width: 100%;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+}
+
+/* ========== SMOOTH TRANSITIONS ========== */
+/* Global Smooth Transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Button Transitions */
+.btn,
+.service-link,
+.nav-link,
+.cta-button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover,
+.btn:focus {
+    transform: translateY(-2px);
+}
+
+/* Link Transitions */
+a {
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Card Transitions */
+.credential-item,
+.service-card,
+.testimonial-card,
+.review-card,
+.pricing-card,
+.portfolio-item,
+.info-block {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Image Transitions */
+.owner-photo,
+.portfolio-image,
+.image-placeholder {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+/* Form Transitions */
+input,
+textarea,
+select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Section Transitions */
+section {
+    transition: background-color 0.3s ease;
+}
+
+/* Portfolio Category Carousels */
+.portfolio-preview .ig-carousel-item {
+    flex-direction: column;
+}
+
+.portfolio-preview .ig-carousel-content {
+    text-align: center;
+}
+
+.portfolio-preview .ig-carousel-content h4 {
+    color: var(--primary);
+    margin: var(--spacing-md) 0 var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+/* Enhanced Transitions for Better UX */
+.ig-carousel-item {
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ig-nav-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ig-dot {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* ========== TESTIMONIALS SECTION ========== */
 .testimonials-preview {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -1090,6 +1448,168 @@ section {
 
     .testimonial-card {
         padding: var(--spacing-md);
+    }
+
+    /* Instagram-style Carousel - Mobile */
+    .ig-carousel {
+        margin: 0 auto var(--spacing-2xl);
+    }
+
+    .portfolio-preview .ig-carousel-item {
+        flex-direction: column;
+    }
+
+    .ig-image-wrapper {
+        min-height: 250px;
+    }
+
+    .ig-carousel-content {
+        padding: var(--spacing-lg);
+    }
+
+    .ig-carousel-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .ig-carousel-content p {
+        font-size: 0.85rem;
+    }
+
+    .testimonials-preview .ig-testimonial-wrapper {
+        min-height: 300px;
+        padding: var(--spacing-lg);
+    }
+
+    .ig-testimonial-content .testimonial-text {
+        font-size: 0.95rem;
+    }
+
+    .ig-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .ig-prev {
+        left: var(--spacing-sm);
+    }
+
+    .ig-next {
+        right: var(--spacing-sm);
+    }
+
+    .ig-dots {
+        padding: var(--spacing-md) 0;
+        gap: var(--spacing-sm);
+    }
+
+    /* Services Carousel Mobile */
+    .services-preview .ig-carousel-item {
+        min-height: 280px;
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .ig-service-wrapper .service-icon {
+        font-size: 2.5rem;
+    }
+
+    .ig-service-wrapper h3 {
+        font-size: 1.1rem;
+    }
+
+    .ig-service-wrapper p {
+        font-size: 0.75rem;
+        max-width: 100%;
+    }
+
+    .ig-service-wrapper .service-link {
+        font-size: 0.8rem;
+    }
+
+    /* Portfolio Carousel Mobile */
+    .portfolio-preview .ig-carousel-item {
+        min-height: 300px;
+    }
+
+    .ig-image-wrapper {
+        height: 180px;
+    }
+
+    .portfolio-preview .ig-carousel-content {
+        padding: var(--spacing-md);
+        text-align: center;
+    }
+
+    .portfolio-preview .ig-carousel-content h4 {
+        color: var(--primary);
+        margin: var(--spacing-md) 0 var(--spacing-xs);
+        font-size: 1rem;
+    }
+
+    .portfolio-preview .ig-carousel-content p {
+        font-size: 0.75rem;
+    }
+
+    /* Testimonials Carousel Mobile */
+    .testimonials-preview .ig-carousel {
+        margin: 0 auto var(--spacing-2xl);
+    }
+
+    .ig-testimonial-wrapper {
+        min-height: 220px;
+        padding: var(--spacing-md);
+    }
+
+    .ig-testimonial-content {
+        max-width: 100%;
+    }
+
+    .ig-testimonial-content .stars {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .ig-testimonial-content .testimonial-text {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .ig-testimonial-content .testimonial-author {
+        font-size: 0.85rem;
+    }
+
+    .ig-testimonial-content .testimonial-role {
+        font-size: 0.75rem;
+    }
+
+    /* Reviews Carousel Mobile */
+    .ig-review-wrapper {
+        min-height: 220px;
+        padding: var(--spacing-md);
+    }
+
+    .ig-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .ig-prev {
+        left: var(--spacing-sm);
+    }
+
+    .ig-next {
+        right: var(--spacing-sm);
+    }
+
+    .ig-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .ig-dot.active {
+        width: 24px;
     }
 
     /* Stats */

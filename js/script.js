@@ -378,6 +378,162 @@ function initAnalytics() {
 }
 
 /**
+ * Instagram-Style Carousel
+ */
+function initIGCarousel() {
+    const carousels = document.querySelectorAll('.ig-carousel');
+    
+    carousels.forEach(carousel => {
+        const inner = carousel.querySelector('.ig-carousel-inner');
+        const items = carousel.querySelectorAll('.ig-carousel-item');
+        const prevBtn = carousel.querySelector('.ig-prev');
+        const nextBtn = carousel.querySelector('.ig-next');
+        const dots = carousel.querySelectorAll('.ig-dot');
+        
+        if (!items.length) return;
+        
+        let currentIndex = 0;
+        let autoplayInterval = null;
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let isTransitioning = false;
+        
+        /**
+         * Update carousel display with smooth transition
+         */
+        function updateCarousel() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            items.forEach((item, index) => {
+                item.classList.remove('active');
+                if (index === currentIndex) {
+                    item.classList.add('active');
+                }
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.classList.remove('active');
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                }
+            });
+            
+            // Allow next transition after fade completes (600ms)
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 600);
+        }
+        
+        /**
+         * Show slide by index
+         */
+        function showSlide(index) {
+            if (isTransitioning) return;
+            currentIndex = (index + items.length) % items.length;
+            updateCarousel();
+            resetAutoplay();
+        }
+        
+        /**
+         * Next slide
+         */
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+        
+        /**
+         * Previous slide
+         */
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+        
+        /**
+         * Autoplay functionality
+         */
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextSlide, 6000);
+        }
+        
+        function resetAutoplay() {
+            clearInterval(autoplayInterval);
+            startAutoplay();
+        }
+        
+        /**
+         * Touch/Swipe support
+         */
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        }
+        
+        /**
+         * Event listeners
+         */
+        if (prevBtn) {
+            prevBtn.addEventListener('click', prevSlide);
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', nextSlide);
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+        
+        /**
+         * Keyboard support
+         */
+        document.addEventListener('keydown', (e) => {
+            const isCarouselInView = carousel.getBoundingClientRect().top < window.innerHeight &&
+                                     carousel.getBoundingClientRect().bottom > 0;
+            if (!isCarouselInView) return;
+            
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+        
+        /**
+         * Pause autoplay on hover/focus
+         */
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            startAutoplay();
+        });
+        
+        // Initialize
+        updateCarousel();
+        startAutoplay();
+    });
+}
+
+/**
  * Initialize All Features
  */
 function init() {
@@ -396,6 +552,9 @@ function initializeApp() {
     setActiveNavLink();
     initMobileNav();
     initHamburgerMenu();
+    
+    // Carousel
+    initIGCarousel();
     
     // Interactions
     initSmoothScroll();
