@@ -72,116 +72,201 @@
         </div>
     </section>
 
-    <!-- Services Preview -->
+    <!-- Services Preview - Instagram Style Carousel -->
     <section class="services-preview">
         <div class="container">
             <div class="section-header">
                 <h2>Our Services</h2>
                 <p class="section-subtitle">Professional Makeup for Every Moment</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">👰</div>
-                    <h3>Bridal Makeup</h3>
-                    <p>Look radiant on your special day with our signature bridal makeup that lasts all day</p>
-                    <a href="services.html#bridal" class="service-link">Learn More →</a>
+            
+            <!-- Instagram-style Carousel -->
+            <div class="ig-carousel" id="servicesCarousel">
+                <div class="ig-carousel-inner">
+                    <div class="ig-carousel-item active">
+                        <div class="ig-service-wrapper">
+                            <div class="service-icon">👰</div>
+                            <h3>Bridal Makeup</h3>
+                            <p>Look radiant on your special day with our signature bridal makeup that lasts all day and photographs beautifully.</p>
+                            <a href="services.html#bridal" class="service-link">Learn More →</a>
+                        </div>
+                    </div>
+                    <div class="ig-carousel-item">
+                        <div class="ig-service-wrapper">
+                            <div class="service-icon">🎬</div>
+                            <h3>Editorial Makeup</h3>
+                            <p>Creative makeup for photoshoots, events, and special occasions. Bold, artistic looks that make statements.</p>
+                            <a href="services.html#editorial" class="service-link">Learn More →</a>
+                        </div>
+                    </div>
+                    <div class="ig-carousel-item">
+                        <div class="ig-service-wrapper">
+                            <div class="service-icon">✨</div>
+                            <h3>Beauty Makeup</h3>
+                            <p>Everyday glamour with professional polish and natural enhancement. Perfect for any occasion.</p>
+                            <a href="services.html#beauty" class="service-link">Learn More →</a>
+                        </div>
+                    </div>
+                    <div class="ig-carousel-item">
+                        <div class="ig-service-wrapper">
+                            <div class="service-icon">👥</div>
+                            <h3>Makeup Lessons</h3>
+                            <p>One-on-one or group lessons to master makeup techniques. Learn from a professional artist.</p>
+                            <a href="services.html#lessons" class="service-link">Learn More →</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🎬</div>
-                    <h3>Editorial Makeup</h3>
-                    <p>Creative makeup for photoshoots, events, and special occasions</p>
-                    <a href="services.html#editorial" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3>Beauty Makeup</h3>
-                    <p>Everyday glamour with professional polish and natural enhancement</p>
-                    <a href="services.html#beauty" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">👥</div>
-                    <h3>Makeup Lessons</h3>
-                    <p>One-on-one or group lessons to master makeup techniques</p>
-                    <a href="services.html#lessons" class="service-link">Learn More →</a>
+                
+                <!-- Navigation Arrows -->
+                <button class="ig-nav-btn ig-prev" aria-label="Previous service" id="servicesPrev">❮</button>
+                <button class="ig-nav-btn ig-next" aria-label="Next service" id="servicesNext">❯</button>
+                
+                <!-- Dots -->
+                <div class="ig-dots" id="servicesDots">
+                    <button class="ig-dot active" aria-label="Go to service 1"></button>
+                    <button class="ig-dot" aria-label="Go to service 2"></button>
+                    <button class="ig-dot" aria-label="Go to service 3"></button>
+                    <button class="ig-dot" aria-label="Go to service 4"></button>
                 </div>
             </div>
+            
             <div class="services-cta">
                 <a href="services.html" class="btn btn-secondary">View All Services</a>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Preview -->
+    <!-- Portfolio Preview - Instagram Style Carousel -->
     <section class="portfolio-preview">
         <div class="container">
             <div class="section-header">
                 <h2>Portfolio Highlights</h2>
                 <p class="section-subtitle">Showcasing Our Best Work</p>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <span>Bridal Look 1</span>
+            
+            <!-- Instagram-style Carousel -->
+            <div class="ig-carousel" id="portfolioCarousel">
+                <div class="ig-carousel-inner">
+                    <div class="ig-carousel-item active">
+                        <div class="ig-image-wrapper">
+                            <div class="image-placeholder">
+                                <span>Bridal Look 1</span>
+                            </div>
+                        </div>
+                        <div class="ig-carousel-content">
+                            <h3>Bridal - Classic Elegance</h3>
+                            <p>A timeless look that captures elegance and sophistication for the perfect wedding day.</p>
                         </div>
                     </div>
-                    <p class="portfolio-title">Bridal - Classic Elegance</p>
+                    <div class="ig-carousel-item">
+                        <div class="ig-image-wrapper">
+                            <div class="image-placeholder">
+                                <span>Editorial Look</span>
+                            </div>
+                        </div>
+                        <div class="ig-carousel-content">
+                            <h3>Editorial - Bold Beauty</h3>
+                            <p>Creative and artistic makeup designed to make a statement in every frame.</p>
+                        </div>
+                    </div>
+                    <div class="ig-carousel-item">
+                        <div class="ig-image-wrapper">
+                            <div class="image-placeholder">
+                                <span>Event Makeup</span>
+                            </div>
+                        </div>
+                        <div class="ig-carousel-content">
+                            <h3>Events - Glamorous Looks</h3>
+                            <p>Stunning makeup that turns heads at any special event or celebration.</p>
+                        </div>
+                    </div>
+                    <div class="ig-carousel-item">
+                        <div class="ig-image-wrapper">
+                            <div class="image-placeholder">
+                                <span>Bridal Look 2</span>
+                            </div>
+                        </div>
+                        <div class="ig-carousel-content">
+                            <h3>Bridal - Modern Romance</h3>
+                            <p>Contemporary bridal style with a romantic touch for the modern bride.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <span>Editorial Look</span>
-                        </div>
-                    </div>
-                    <p class="portfolio-title">Editorial - Bold Beauty</p>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <span>Event Makeup</span>
-                        </div>
-                    </div>
-                    <p class="portfolio-title">Events - Glamorous Looks</p>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <span>Bridal Look 2</span>
-                        </div>
-                    </div>
-                    <p class="portfolio-title">Bridal - Modern Romance</p>
+                
+                <!-- Navigation Arrows -->
+                <button class="ig-nav-btn ig-prev" aria-label="Previous slide" id="portfolioPrev">❮</button>
+                <button class="ig-nav-btn ig-next" aria-label="Next slide" id="portfolioNext">❯</button>
+                
+                <!-- Dots -->
+                <div class="ig-dots" id="portfolioDots">
+                    <button class="ig-dot active" aria-label="Go to slide 1"></button>
+                    <button class="ig-dot" aria-label="Go to slide 2"></button>
+                    <button class="ig-dot" aria-label="Go to slide 3"></button>
+                    <button class="ig-dot" aria-label="Go to slide 4"></button>
                 </div>
             </div>
+            
             <div class="portfolio-cta">
                 <a href="portfolio.html" class="btn btn-secondary">View Full Portfolio</a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Preview -->
+    <!-- Testimonials Preview - Instagram Style Carousel -->
     <section class="testimonials-preview">
         <div class="container">
             <div class="section-header">
                 <h2>Client Love</h2>
                 <p class="section-subtitle">What Our Clients Say</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"She transformed my look completely! I felt so confident on my wedding day. Highly recommended!"</p>
-                    <p class="testimonial-author">- Sarah M., Bride</p>
+            
+            <!-- Instagram-style Carousel -->
+            <div class="ig-carousel" id="testimonialsCarousel">
+                <div class="ig-carousel-inner">
+                    <div class="ig-carousel-item active">
+                        <div class="ig-testimonial-wrapper">
+                            <div class="ig-testimonial-content">
+                                <div class="stars">★★★★★</div>
+                                <p class="testimonial-text">"She transformed my look completely! I felt so confident on my wedding day. Highly recommended!"</p>
+                                <p class="testimonial-author">Sarah M.</p>
+                                <p class="testimonial-role">Bride</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ig-carousel-item">
+                        <div class="ig-testimonial-wrapper">
+                            <div class="ig-testimonial-content">
+                                <div class="stars">★★★★★</div>
+                                <p class="testimonial-text">"Professional, creative, and attentive to detail. The makeup lasted perfectly throughout my photo shoot."</p>
+                                <p class="testimonial-author">Jessica L.</p>
+                                <p class="testimonial-role">Model</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ig-carousel-item">
+                        <div class="ig-testimonial-wrapper">
+                            <div class="ig-testimonial-content">
+                                <div class="stars">★★★★★</div>
+                                <p class="testimonial-text">"Best makeup artist I've ever worked with. She has great communication and exceptional skills."</p>
+                                <p class="testimonial-author">Amanda K.</p>
+                                <p class="testimonial-role">Event Planner</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Professional, creative, and attentive to detail. The makeup lasted perfectly throughout my photo shoot."</p>
-                    <p class="testimonial-author">- Jessica L., Model</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Best makeup artist I've ever worked with. She has great communication and exceptional skills."</p>
-                    <p class="testimonial-author">- Amanda K., Event Planner</p>
+                
+                <!-- Navigation Arrows -->
+                <button class="ig-nav-btn ig-prev" aria-label="Previous testimonial" id="testimonialsPrev">❮</button>
+                <button class="ig-nav-btn ig-next" aria-label="Next testimonial" id="testimonialsNext">❯</button>
+                
+                <!-- Dots -->
+                <div class="ig-dots" id="testimonialsDots">
+                    <button class="ig-dot active" aria-label="Go to testimonial 1"></button>
+                    <button class="ig-dot" aria-label="Go to testimonial 2"></button>
+                    <button class="ig-dot" aria-label="Go to testimonial 3"></button>
                 </div>
             </div>
+            
             <div class="testimonials-cta">
                 <a href="reviews.html" class="btn btn-secondary">Read More Reviews</a>
             </div>
